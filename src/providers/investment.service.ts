@@ -1,29 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Investment } from 'src/models/investment';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvestmentService {
 
-  constructor() { }
+  private SERVER_URL = "http://localhost:3000";
 
-  public getAll(): Investment[] {
+  constructor(private httpClient: HttpClient) { }
+
+  public getAll(): Observable<any> {
+        return this.httpClient.get(this.SERVER_URL)
+  }
+
+  public getByCity(city: string): Observable<Investment[]> {
     let observer
     return observer
   }
 
-  public getByCity(): Investment[] {
+  public getByEtatAvancement(avancement: string): Observable<Investment[]> {
     let observer
     return observer
   }
 
-  public getByEtatAvancement(): Investment[] {
-    let observer
-    return observer
-  }
-
-  public getOne(): Investment {
+  public getOne(id: number): Observable<Investment> {
     let observer
     return observer
   }

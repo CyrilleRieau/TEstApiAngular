@@ -10,6 +10,16 @@ import { InvestmentDetailsComponent } from '../pages/investment-list/investment-
 
 //services
 import { InvestmentService } from 'src/providers/investment.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { 
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatButtonModule,
+  MatListModule,
+  MatProgressSpinnerModule } from '@angular/material';
+
 
 @NgModule({
   declarations: [
@@ -17,10 +27,18 @@ import { InvestmentService } from 'src/providers/investment.service';
     InvestmentListComponent,
     InvestmentDetailsComponent
   ],
+  
   imports: [
     BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    MatListModule,
+    MatProgressSpinnerModule,
     AppRoutingModule,
-    HttpClientModule
   ],
   providers: [
     InvestmentService
