@@ -1,5 +1,8 @@
 
 <ul>
+    <input type="text" matInput placeholder="Ville" (keyup)="filterDataByCity()" [(ngModel)]="citySearch">
+    <input matInput placeholder="Etat avancement" (keyup)="filterDataByState()" [(ngModel)]="stateSearch">
+
     <li *ngFor="let investment of investments">
       {{ investment.titreoperation }}
     </li>
