@@ -13,7 +13,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(routes, { enableTracing: true }),
+    RouterModule.forRoot(routes),
     CommonModule
   ],
   exports: [RouterModule]

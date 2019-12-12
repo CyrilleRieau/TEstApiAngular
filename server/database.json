@@ -1,4 +1,5 @@
-[
+{ 
+  "investments" : [
     {
       "titreoperation": "Ravalement des façades, mise en conformité des ateliers et création foyer des élèves",
       "entreprise": "Coulon SA",
@@ -6050,3 +6051,4 @@
       "enveloppe_prev_en_meu": 11.12
     }
   ]
+}

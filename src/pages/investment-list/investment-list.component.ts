@@ -16,8 +16,8 @@ export class InvestmentListComponent implements OnInit {
 
   ngOnInit() {
     console.log('tot')
-    this.investmentService.getAll().subscribe((data)=> this.investments = data)
-    console.log(this.investments)
+    this.investmentService.getAll().subscribe((data)=> {
+      this.investments = JSON.parse(data)})
   }
 
 }
