@@ -1,10 +1,11 @@
-
-<ul>
-    <input type="text" matInput placeholder="Ville" (keyup)="filterDataByCity()" [(ngModel)]="citySearch">
-    <input matInput placeholder="Etat avancement" (keyup)="filterDataByState()" [(ngModel)]="stateSearch">
-
-    <li *ngFor="let investment of investments">
-      {{ investment.titreoperation }}
+<form>
+  <input type='text' placeholder="Ville" [(ngModel)]="citySearch" (keyup)="filterDataByCity()" name="city">
+  <input type='text' placeholder="Etat avancement" [(ngModel)]="stateSearch" (keyup)="filterDataByState()" name="state">
+</form>
+<ul *ngIf="investments">
+    <li *ngFor="let investment of filteredInv">
+      <div>{{ investment.titreoperation }}</div>
+      <button (click)="getOneInvestment(investment)">Détail</button>
     </li>
   </ul>
 

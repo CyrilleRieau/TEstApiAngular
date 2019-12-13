@@ -33,7 +33,7 @@ export class InvestmentService {
     return observer
   }
 
-  public getOne(id: number): Observable<Investment> {
+  public getOne(code: string): Observable<Investment> {
     let observer
     return observer
   }

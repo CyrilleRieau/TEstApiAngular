@@ -12,6 +12,8 @@ import { InvestmentDetailsComponent } from '../pages/investment-list/investment-
 import { InvestmentService } from 'src/providers/investment.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { FormControl, FormsModule } from '@angular/forms';
+
 import { 
   MatToolbarModule,
   MatIconModule,
@@ -38,6 +40,7 @@ import {
     MatButtonModule,
     MatListModule,
     MatProgressSpinnerModule,
+    FormsModule,
     AppRoutingModule,
   ],
   providers: [

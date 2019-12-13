@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Investment } from 'src/models/investment';
 import { InvestmentService } from 'src/providers/investment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-investment-list',
@@ -9,35 +10,43 @@ import { InvestmentService } from 'src/providers/investment.service';
 })
 export class InvestmentListComponent implements OnInit {
 
-  public citySearch: string
-  public stateSearch: string
+  public citySearch: string = ""
+  public stateSearch: string= ""
   public investments: Investment[]
-  filteredInv: Investment[]
+  public filteredInv: Investment[]
   constructor(
-    private investmentService: InvestmentService
+    private investmentService: InvestmentService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    console.log('tot')
     this.investmentService.getAll().subscribe((data)=> {
-      this.investments = JSON.parse(data)})
+      this.investments = JSON.parse(data)
+      this.filteredInv = this.investments  
+    })
   }
 
   public filterDataByCity(){
+    this.filteredInv = this.investments 
     const val = this.citySearch
-    this.filteredInv = this.investments.filter(function(investment: Investment) {
+    this.filteredInv = this.filteredInv.filter(function(investment: Investment) {
       return (investment.ville.search(new RegExp(val, 'i')) !== -1 || !val );
     })
-    this.investments = this.filteredInv
   }
 
   public filterDataByState(){
+    this.filteredInv = this.investments 
     const val = this.stateSearch
-    this.filteredInv = this.investments.filter(function(investment: Investment) {
+    this.filteredInv = this.filteredInv.filter(function(investment: Investment) {
       return (investment.etat_d_avancement.search(new RegExp(val, 'i')) !== -1 || !val );
     })
-    this.investments = this.filteredInv
   }
 
+  public getOneInvestment(investment: any){
+    localStorage.setItem('investment', investment.codeuai)
+    this.router.navigate(['/details'])
+    // , {relativeTo: this.route}
+
+  }
 
 }
