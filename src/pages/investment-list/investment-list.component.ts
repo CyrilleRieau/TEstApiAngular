@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
 export class InvestmentListComponent implements OnInit {
 
   public citySearch: string = ""
+  public citySearchClick: string = ""
   public stateSearch: string= ""
+  public stateSearchClick: string= ""
   public investments: Investment[]
   public filteredInv: Investment[]
   constructor(
@@ -49,4 +51,15 @@ export class InvestmentListComponent implements OnInit {
 
   }
 
+  public filterByCityClick(){
+    this.investmentService.getByCity(this.citySearchClick).subscribe((data)=> {
+      this.filteredInv = data })
+  }
+
+  public filterByStateClick(){
+    console.log(this.stateSearchClick)
+    this.investmentService.getByState(this.stateSearchClick).subscribe((data)=> {
+      this.filteredInv = data 
+    })
+  }
 }

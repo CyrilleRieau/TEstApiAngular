@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Investment } from 'src/models/investment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of, ReplaySubject } from 'rxjs';
 
 @Injectable({
@@ -24,17 +24,20 @@ export class InvestmentService {
   }
 
   public getByCity(city: string): Observable<Investment[]> {
-    let observer
-    return observer
+    const options = city ?
+    { params: new HttpParams().set('ville', city) } : {};
+    return this.httpClient.get<Investment[]>(this.SERVER_URL, options)
   }
 
-  public getByEtatAvancement(avancement: string): Observable<Investment[]> {
-    let observer
-    return observer
+  public getByState(avancement: string): Observable<Investment[]> {
+    const options = avancement ?
+    { params: new HttpParams().set('etat_d_avancement', avancement) } : {};
+    return this.httpClient.get<Investment[]>(this.SERVER_URL, options)
   }
 
   public getOne(code: string): Observable<Investment> {
-    let observer
-    return observer
+    const options = code ?
+    { params: new HttpParams().set('codeuai', code) } : {};
+    return this.httpClient.get<Investment>(this.SERVER_URL, options)
   }
 }

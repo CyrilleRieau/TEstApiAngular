@@ -1,6 +1,14 @@
 <form>
-  <input type='text' placeholder="Ville" [(ngModel)]="citySearch" (keyup)="filterDataByCity()" name="city">
-  <input type='text' placeholder="Etat avancement" [(ngModel)]="stateSearch" (keyup)="filterDataByState()" name="state">
+  <div> Recherche de type Angular
+    <input type='text' placeholder="Ville" [(ngModel)]="citySearch" (keyup)="filterDataByCity()" name="city">
+    <input type='text' placeholder="Etat avancement" [(ngModel)]="stateSearch" (keyup)="filterDataByState()" name="state">
+  </div>
+  <div>Recherche avec appel API
+    <input type='text' placeholder="Ville" [(ngModel)]="citySearchClick" name="cityClick">
+    <button (click)="filterByCityClick()">Recherche par Ville</button>
+    <input type='text' placeholder="Etat avancement" [(ngModel)]="stateSearchClick" name="stateClick">
+    <button (click)="filterByStateClick()">Recherche par Etat</button>
+  </div>
 </form>
 <ul *ngIf="investments">
     <li *ngFor="let investment of filteredInv">
