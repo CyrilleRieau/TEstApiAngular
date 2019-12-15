@@ -1,6 +1,55 @@
 <p>investment-details works!</p>
-<ul *ngIf="investment">
-    <li>
-        {{investment.titreoperation}}
-    </li>
-</ul>
+<div *ngIf="investment">
+    <h1>{{investment.titreoperation}}</h1>       
+    <div><h3>Entreprise</h3>
+        <p style="padding-left : 10px;">{{investment.entreprise}}</p>
+    </div>
+    <div><h3>Année Livraison</h3>
+        <p style="padding-left : 5px;">{{investment.annee_de_livraison}}</p >
+    </div>
+    <div><h3>Ville</h3>
+        <p style="padding-left : 5px;">{{investment.ville}}</p>
+    </div>
+    <div><h3>Mandataire</h3>
+        <p style="padding-left : 5px;">{{investment.mandataire}}</p>
+    </div>
+    <div><h3>Plan particulier d'intervention</h3>
+        <p style="padding-left : 5px;">{{investment.ppi}}</p>
+    </div>
+    <div><h3>Lycée</h3>
+        <p style="padding-left : 5px;">{{investment.lycee}}</p>
+    </div>
+    <div><h3>Notification du marché</h3>
+        <p style="padding-left : 5px;">{{investment.notification_du_marche}}</p>
+    </div>
+    <div><h3>Code UAI</h3>
+        <p style="padding-left : 5px;">{{investment.codeuai}}</p>
+    </div>
+    <div><h3>Longitude</h3>
+        <p style="padding-left : 5px;">{{investment.longitude}}</p>
+    </div>
+    <div><h3>Latitude</h3>
+        <p style="padding-left : 5px;">{{investment.latitude}}</p>
+    </div>
+    <div><h3>Etat d'avancement</h3>
+        <p style="padding-left : 5px;">{{investment.etat_d_avancement}}</p>
+    </div>
+    <div><h3>Montant des AP Votes en Meu</h3>
+        <p style="padding-left : 5px;">{{investment.montant_des_ap_votes_en_meu}}</p>
+    </div>
+    <div><h3>Maitrise d'oeuvre</h3>
+        <p style="padding-left : 5px;">{{investment.maitrise_d_oeuvre}}</p>
+    </div>
+    <div><h3>Mode de dévolution</h3>
+        <p style="padding-left : 5px;">{{investment.mode_de_devolution}}</p>
+    </div>
+    <div><h3>Année d'individualisation</h3>
+        <p style="padding-left : 5px;">{{investment.annee_d_individualisation}}</p>
+    </div>
+    <div><h3>Enveloppe prévisionnelle en meu</h3>
+        <p style="padding-left : 5px;">{{investment.enveloppe_prev_en_meu}}</p>
+    </div>
+    <div><h3>CAO Attribution</h3>
+        <p style="padding-left : 5px;">{{investment.cao_attribution}}</p>
+    </div>
+</div>

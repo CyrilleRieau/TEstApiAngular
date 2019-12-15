@@ -13,13 +13,6 @@ export class InvestmentService {
   constructor(private httpClient: HttpClient) { }
 
   public getAll(): Observable<any> {
-    // let observer = new ReplaySubject<any>()
-    // const request = new ApiRequest<any>(this.SERVER_URL, null)
-    // this.getAll(request).subscribe(
-    //   (data)=> { this.investments = data;
-    //   observer.next(this.investments) }
-    // )
-    //   return observer  
     return this.httpClient.get(this.SERVER_URL, {responseType: 'text'})
   }
 

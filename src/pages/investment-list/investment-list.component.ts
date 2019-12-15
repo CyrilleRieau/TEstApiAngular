@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Investment } from 'src/models/investment';
-import { InvestmentService } from 'src/providers/investment.service';
+import {MatTableDataSource} from '@angular/material/table';
 import { Router } from '@angular/router';
+
+import { Investment } from 'src/models/investment';
+
+import { InvestmentService } from 'src/providers/investment.service';
+
 
 @Component({
   selector: 'app-investment-list',
@@ -10,12 +14,15 @@ import { Router } from '@angular/router';
 })
 export class InvestmentListComponent implements OnInit {
 
+  public filteredInv: Investment[] = []
+  displayedColumns: string[] = ['titreoperation', 'entreprise', 'annee_de_livraison', 'ville', 'codeuai', 'etat_d_avancement', 'detail'];
+  dataSource = new MatTableDataSource<Investment>(this.filteredInv);
+
   public citySearch: string = ""
   public citySearchClick: string = ""
   public stateSearch: string= ""
   public stateSearchClick: string= ""
   public investments: Investment[]
-  public filteredInv: Investment[]
   constructor(
     private investmentService: InvestmentService,
     private router: Router
@@ -24,7 +31,8 @@ export class InvestmentListComponent implements OnInit {
   ngOnInit() {
     this.investmentService.getAll().subscribe((data)=> {
       this.investments = JSON.parse(data)
-      this.filteredInv = this.investments  
+      this.filteredInv = this.investments 
+      ;
     })
   }
 

@@ -19,6 +19,7 @@ import {
   MatIconModule,
   MatCardModule,
   MatButtonModule,
+  MatTableModule,
   MatListModule,
   MatProgressSpinnerModule } from '@angular/material';
 
@@ -38,6 +39,7 @@ import {
     MatIconModule,
     MatCardModule,
     MatButtonModule,
+    MatTableModule,
     MatListModule,
     MatProgressSpinnerModule,
     FormsModule,
